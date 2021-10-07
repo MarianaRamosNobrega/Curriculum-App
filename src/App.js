@@ -1,21 +1,21 @@
-import { Formik } from 'formik';
-import React from 'react';
-import ProfForm from "./Prof";
-import ProjForm from "./Proj";
-import{ Route, Link} from "react-router-dom";
-import AlunoForm from "./Aluno";
-import NavBar from "./NavBar";
+import * as React from 'react';
+import { Text, SafeAreaView } from 'react-native';
+import styles from './styles';
+import photo from './assets/icon.png';
+import Avatar from './components/Avatar';
+import SocialNetworks from './components/SocialNetworks'
+import CardItem from './components/CardItem/index'
 
-function App1(){
-    return(
- <div className = "App">
-        <NavBar />
-          <Route exact path="/Aluno" component={AlunoForm} />
-        <Route exact path="/Prof" component={ProfForm} />
-        <Route exact path="/Proj" component={ProjForm} />
-          </div>
-        );
-    }
+const App = () => {
+  return (
+    <SafeAreaView style={styles.page}>
+      <Avatar photo={photo} name="JOÃOZINHO DOS SANTOS" role="Mobile Developer"/>
+      <SocialNetworks />
+      <CardItem title="Objetivo">
+        <Text style={styles.content}>Experiência Profissional</Text>
+      </CardItem>
+    </SafeAreaView>
+  );
+}
 
-
-export default App1;
+export default App;

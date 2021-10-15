@@ -4,7 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
+const express = require("express")
+const app = express()
 
+app.get("/", function(res,req){
+    res.send("Working");
+});
+
+app.listen(process.env.PORT || 5000)
 
 
 ReactDOM.render(
